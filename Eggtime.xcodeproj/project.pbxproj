@@ -11,6 +11,12 @@
 		121EE0C526FDEB220083C675 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121EE0C426FDEB220083C675 /* ContentView.swift */; };
 		121EE0C726FDEB230083C675 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 121EE0C626FDEB230083C675 /* Assets.xcassets */; };
 		121EE0CA26FDEB230083C675 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 121EE0C926FDEB230083C675 /* Preview Assets.xcassets */; };
+		121EE0D226FDEFEB0083C675 /* EggShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121EE0D126FDEFEB0083C675 /* EggShape.swift */; };
+		121EE0D426FDF0D90083C675 /* Egg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121EE0D326FDF0D90083C675 /* Egg.swift */; };
+		121EE0D626FDF9FA0083C675 /* BoiledDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121EE0D526FDF9FA0083C675 /* BoiledDetails.swift */; };
+		121EE0D826FDFFB30083C675 /* CookedEgg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121EE0D726FDFFB30083C675 /* CookedEgg.swift */; };
+		121EE0DA26FE03E60083C675 /* EggYellow1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121EE0D926FE03E60083C675 /* EggYellow1.swift */; };
+		121EE0DC26FE04190083C675 /* EggYellow2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121EE0DB26FE04190083C675 /* EggYellow2.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +26,12 @@
 		121EE0C626FDEB230083C675 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		121EE0C926FDEB230083C675 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		121EE0CB26FDEB230083C675 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		121EE0D126FDEFEB0083C675 /* EggShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggShape.swift; sourceTree = "<group>"; };
+		121EE0D326FDF0D90083C675 /* Egg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Egg.swift; sourceTree = "<group>"; };
+		121EE0D526FDF9FA0083C675 /* BoiledDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoiledDetails.swift; sourceTree = "<group>"; };
+		121EE0D726FDFFB30083C675 /* CookedEgg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookedEgg.swift; sourceTree = "<group>"; };
+		121EE0D926FE03E60083C675 /* EggYellow1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggYellow1.swift; sourceTree = "<group>"; };
+		121EE0DB26FE04190083C675 /* EggYellow2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggYellow2.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +66,12 @@
 			children = (
 				121EE0C226FDEB220083C675 /* EggtimeApp.swift */,
 				121EE0C426FDEB220083C675 /* ContentView.swift */,
+				121EE0D526FDF9FA0083C675 /* BoiledDetails.swift */,
+				121EE0D726FDFFB30083C675 /* CookedEgg.swift */,
+				121EE0D926FE03E60083C675 /* EggYellow1.swift */,
+				121EE0DB26FE04190083C675 /* EggYellow2.swift */,
+				121EE0D126FDEFEB0083C675 /* EggShape.swift */,
+				121EE0D326FDF0D90083C675 /* Egg.swift */,
 				121EE0C626FDEB230083C675 /* Assets.xcassets */,
 				121EE0CB26FDEB230083C675 /* Info.plist */,
 				121EE0C826FDEB230083C675 /* Preview Content */,
@@ -138,8 +156,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				121EE0D226FDEFEB0083C675 /* EggShape.swift in Sources */,
 				121EE0C526FDEB220083C675 /* ContentView.swift in Sources */,
+				121EE0D826FDFFB30083C675 /* CookedEgg.swift in Sources */,
+				121EE0DA26FE03E60083C675 /* EggYellow1.swift in Sources */,
+				121EE0DC26FE04190083C675 /* EggYellow2.swift in Sources */,
+				121EE0D626FDF9FA0083C675 /* BoiledDetails.swift in Sources */,
 				121EE0C326FDEB220083C675 /* EggtimeApp.swift in Sources */,
+				121EE0D426FDF0D90083C675 /* Egg.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
