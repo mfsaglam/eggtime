@@ -29,6 +29,7 @@ struct CookedEgg: View {
                       ))
                     .frame(width: 180)
                     .offset(x: 0, y: 30)
+                    .shadow(color: Color(#colorLiteral(red: 0.7254902124, green: 0.4784313738, blue: 0.09803921729, alpha: 1)), radius: 15)
                     .overlay(
                         EggYellow1()
                             .fill(LinearGradient(
@@ -39,6 +40,7 @@ struct CookedEgg: View {
                                     endPoint: UnitPoint(x: 0.9999999307105369, y: 1.10999999318987)))
                             .frame(width:140 , height: 140)
                             .offset(x: -30, y: -10)
+                            .blur(radius: 5)
                     )
                     .overlay(EggYellow2()
                                 .fill(LinearGradient(
@@ -49,6 +51,7 @@ struct CookedEgg: View {
                                         endPoint: UnitPoint(x: 0.9999999307105369, y: 1.10999999318987)))
                                 .frame(width: 170, height: 130)
                                 .offset(x: 20, y:70)
+                                .blur(radius: 5)
                     )
             )
     }
@@ -56,6 +59,10 @@ struct CookedEgg: View {
 
 struct CookedEgg_Previews: PreviewProvider {
     static var previews: some View {
-        CookedEgg()
+        ZStack {
+            Color.gray
+                .ignoresSafeArea()
+            CookedEgg()
+        }
     }
 }

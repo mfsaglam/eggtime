@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
+    
     var body: some View {
         ZStack {
-            background(Color(#colorLiteral(red: 0.9986035228, green: 0.9838824868, blue: 0.9710287452, alpha: 1)))
             VStack(spacing: -20) {
                 Spacer()
                 Text("EGGTIME")
@@ -32,8 +32,17 @@ struct ContentView: View {
                 Text("as you like!")
                     .font(.system(size: 30, weight: .bold, design: .default))
                 Spacer()
-                Egg()
-                    .frame(width: 250, height: 320)
+                VStack(spacing: -5) {
+                    Egg()
+                        .frame(width: 250, height: 320)
+                        .zIndex(1)
+                    Ellipse()
+                        .frame(width: 150 ,height: 20)
+                        .foregroundColor(.black)
+                        .opacity(0.2)
+                        .blur(radius: 10)
+                        
+                }
                 Spacer()
                 Text("LET'S COOK!")
                     .bold()
