@@ -50,6 +50,7 @@ struct BoiledDetails: View {
                         )
                         .foregroundColor(Color(#colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)))
                 }
+                
             }
             .padding(20)
             
@@ -61,7 +62,7 @@ struct BoiledDetails: View {
                         .font(.system(size: 20, weight: .semibold, design: .default))
                     Spacer()
                 }
-                HStack(spacing: 20) {
+                HStack(spacing: 30) {
                     Text("S")
                         .frame(width: 110, height: 60)
                         .background(RoundedRectangle(cornerRadius: 5)
@@ -83,6 +84,81 @@ struct BoiledDetails: View {
                 }
             }
             .padding(20)
+            
+            VStack(spacing: 50) {
+                HStack {
+                    Text("Egg")
+                        .font(.system(size: 20, weight: .regular, design: .default))
+                    Text("boiled type")
+                        .font(.system(size: 20, weight: .semibold, design: .default))
+                    Spacer()
+                }
+                HStack(spacing: 75) {
+                    ZStack {
+                        Text("Soft")
+                            .padding(.vertical)
+                            .frame(width: 80, height: 110, alignment: .bottom)
+                            .background(RoundedRectangle(cornerRadius: 5)
+                                            .stroke(lineWidth: 2)
+                            )
+                            .foregroundColor(Color(#colorLiteral(red: 0.9013573527, green: 0.5734035373, blue: 0.4102450013, alpha: 1)))
+                        CookedEgg()
+                            .scaleEffect(x: 0.25, y: 0.25, anchor: .center)
+                            .frame(width: 20, height: 20)
+                            .offset(y: -50)
+                    }
+                    ZStack {
+                        Text("Medium")
+                            .foregroundColor(Color(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)))
+                            .padding(.vertical)
+                            .frame(width: 80, height: 110, alignment: .bottom)
+                            .background(RoundedRectangle(cornerRadius: 5)
+                                            .stroke(lineWidth: 2)
+                            )
+                            .foregroundColor(Color(#colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)))
+                        CookedEgg()
+                            .scaleEffect(x: 0.25, y: 0.25, anchor: .center)
+                            .frame(width: 20, height: 20)
+                            .offset(y: -50)
+                    }
+                    
+                    ZStack {
+                        Text("Hard")
+                            .foregroundColor(Color(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)))
+                            .padding(.bottom)
+                            .frame(width: 80, height: 110, alignment: .bottom)
+                            .background(RoundedRectangle(cornerRadius: 5)
+                                            .stroke(lineWidth: 2)
+                            )
+                            .foregroundColor(Color(#colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)))
+                        CookedEgg()
+                            .scaleEffect(x: 0.25, y: 0.25, anchor: .center)
+                            .frame(width: 20, height: 20)
+                            .offset(y: -50)
+                    }
+                }
+            }
+            .padding(20)
+            
+            HStack(alignment: .bottom) {
+                VStack(alignment: .leading) {
+                    Text("Estimated boiled time")
+                    HStack(alignment: .firstTextBaseline) {
+                        Text("8:30")
+                            .font(.system(size: 35, weight: .heavy))
+                        Text("MIN")
+                            .font(.footnote)
+                            .bold()
+                    }
+                }
+                Spacer()
+                Image(systemName: "chevron.right")
+                    .foregroundColor(.white)
+                    .frame(width: 60, height: 60)
+                    .background(Color(#colorLiteral(red: 0.9013573527, green: 0.5734035373, blue: 0.4102450013, alpha: 1)))
+                    .clipShape(RoundedRectangle(cornerRadius: 7, style: .continuous))
+            }
+            .padding(.horizontal)
         }
     }
 }
