@@ -10,13 +10,14 @@ import SwiftUI
 struct BoiledDetails: View {
     var body: some View {
         VStack(spacing: 20) {
-            HStack {
+            HStack(alignment: .top) {
                 VStack(alignment: .leading) {
                     ThinBoldHeader(thinText: "Set", boldText: "boiled details")
                     Text("Prepare eggs as you like!")
                         .font(Font.custom("Montserrat-Light", size: 17))
                         .foregroundColor(.secondary)
                 }
+                .offset(y: 30)
                 Spacer()
                 Egg()
                     .frame(width: 150, height: 190)
@@ -30,8 +31,9 @@ struct BoiledDetails: View {
             }
             VStack(spacing: 25) {
                 ThinBoldHeader(thinText: "Egg", boldText: "temperature")
-                HStack {
+                HStack(spacing: 0) {
                     ButtonStandart(text: "Fridge temperature", horizontalPadding: 20, isSelected: true)
+                    Spacer()
                     ButtonStandart(text: "Room temperature", horizontalPadding: 20, isSelected: false)
                 }
                 
@@ -39,21 +41,27 @@ struct BoiledDetails: View {
             
             VStack(spacing: 25) {
                 ThinBoldHeader(thinText: "Egg", boldText: "size")
-                HStack(spacing: 30) {
+                HStack(spacing: 0) {
                     ButtonStandart(text: "S", horizontalPadding: 45, isSelected: true)
+                    Spacer()
                     ButtonStandart(text: "M", horizontalPadding: 45, isSelected: false)
+                    Spacer()
                     ButtonStandart(text: "L", horizontalPadding: 45, isSelected: false)
                 }
             }
             
             VStack(spacing: 50) {
                 ThinBoldHeader(thinText: "Egg", boldText: "boiled type")
-                HStack(spacing: 50.0) {
+                HStack(spacing: 0) {
                     ButtonWithEgg(text: "Soft", isSelected: true)
+                    Spacer()
                     ButtonWithEgg(text: "Medium", isSelected: false)
+                    Spacer()
                     ButtonWithEgg(text: "Hard", isSelected: false)
                 }
             }
+            
+            Spacer()
             
             HStack(alignment: .bottom) {
                 VStack(alignment: .leading) {
@@ -91,14 +99,17 @@ struct ButtonWithEgg: View {
     var isSelected: Bool
     var body: some View {
         ZStack {
-            Text(text)
-                .foregroundColor(isSelected ? Color(#colorLiteral(red: 0.9013573527, green: 0.5734035373, blue: 0.4102450013, alpha: 1)) : .primary)
-                .padding(.vertical)
-                .frame(width: 90, height: 110, alignment: .bottom)
-                .background(RoundedRectangle(cornerRadius: 5)
-                                .stroke(lineWidth: 2)
-                )
-                .foregroundColor(isSelected ? Color(#colorLiteral(red: 0.9013573527, green: 0.5734035373, blue: 0.4102450013, alpha: 1)) : Color(#colorLiteral(red: 0.8038417101, green: 0.8039775491, blue: 0.8038237691, alpha: 1)))
+            VStack(alignment: .leading) {
+                Text(text)
+                Text("boiled").bold()
+            }
+            .foregroundColor(isSelected ? Color(#colorLiteral(red: 0.9013573527, green: 0.5734035373, blue: 0.4102450013, alpha: 1)) : .primary)
+            .padding(.vertical)
+            .frame(width: 100, height: 120, alignment: .bottom)
+            .background(RoundedRectangle(cornerRadius: 5)
+                            .stroke(lineWidth: 2)
+            )
+            .foregroundColor(isSelected ? Color(#colorLiteral(red: 0.9013573527, green: 0.5734035373, blue: 0.4102450013, alpha: 1)) : Color(#colorLiteral(red: 0.8038417101, green: 0.8039775491, blue: 0.8038237691, alpha: 1)))
             CookedEgg()
                 .scaleEffect(x: 0.25, y: 0.25, anchor: .center)
                 .frame(width: 20, height: 20)
@@ -112,13 +123,26 @@ struct ButtonStandart: View {
     var horizontalPadding: CGFloat
     var isSelected: Bool
     var body: some View {
-        Text(text)
-            .padding(.horizontal, horizontalPadding)
-            .padding(.vertical, 19)
-            .background(RoundedRectangle(cornerRadius: 5)
-                            .stroke(lineWidth: 2)
-            )
-            .foregroundColor(isSelected ? Color(#colorLiteral(red: 0.9013573527, green: 0.5734035373, blue: 0.4102450013, alpha: 1)) : Color(#colorLiteral(red: 0.8038417101, green: 0.8039775491, blue: 0.8038237691, alpha: 1)))
+        HStack {
+            if text.contains(" ") {
+                HStack {
+                    Text("\(text.components(separatedBy: " ")[0])")
+                        .font(.callout)
+                    Text("\(text.components(separatedBy: " ")[1])")
+                        .font(.callout)
+                        .bold()
+                }
+            } else {
+                Text(text)
+                    .font(.headline)
+            }
+        }
+        .padding(.horizontal, horizontalPadding)
+        .padding(.vertical, 19)
+        .background(RoundedRectangle(cornerRadius: 5)
+                        .stroke(lineWidth: 2)
+        )
+        .foregroundColor(isSelected ? Color(#colorLiteral(red: 0.9013573527, green: 0.5734035373, blue: 0.4102450013, alpha: 1)) : Color(#colorLiteral(red: 0.8038417101, green: 0.8039775491, blue: 0.8038237691, alpha: 1)))
     }
 }
 
