@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct CookedEgg: View {
+    var boiledType: String = "hard"
     var body: some View {
         EggShape()
             .fill(LinearGradient(
@@ -21,8 +22,8 @@ struct CookedEgg: View {
                 Circle()
                     .fill(RadialGradient(
                         gradient: Gradient(stops: [
-                                            .init(color: Color(#colorLiteral(red: 0.9137254953384399, green: 0.6470588445663452, blue: 0.24313725531101227, alpha: 1)), location: 0),
-                                            .init(color: Color(#colorLiteral(red: 0.8352941274642944, green: 0.5411764979362488, blue: 0.21960784494876862, alpha: 1)), location: 1)]),
+                                            .init(color: boiledType == "soft" ? Color(#colorLiteral(red: 1, green: 0.4936591387, blue: 0, alpha: 1)) : boiledType == "medium" ? Color(#colorLiteral(red: 0.9137254953384399, green: 0.6470588445663452, blue: 0.24313725531101227, alpha: 1)) : Color(#colorLiteral(red: 0.9492720962, green: 0.8187921047, blue: 0, alpha: 1)), location: 0),
+                                            .init(color: boiledType == "soft" ? Color(#colorLiteral(red: 0.852987349, green: 0.2811880708, blue: 0, alpha: 1)) : boiledType == "medium" ? Color(#colorLiteral(red: 0.8352941274642944, green: 0.5411764979362488, blue: 0.21960784494876862, alpha: 1)) : Color(#colorLiteral(red: 0.8201798797, green: 0.6485458612, blue: 0, alpha: 1)), location: 1)]),
                         center: UnitPoint(x: 0.5290177806801635, y: 0.5900000046020861),
                         startRadius: 1.1090853994894816,
                         endRadius: 140.31737936243374
@@ -62,7 +63,7 @@ struct CookedEgg_Previews: PreviewProvider {
         ZStack {
             Color.gray
                 .ignoresSafeArea()
-            CookedEgg()
+            CookedEgg(boiledType: "hard")
         }
     }
 }
