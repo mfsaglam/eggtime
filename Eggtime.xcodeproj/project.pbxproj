@@ -19,6 +19,9 @@
 		121EE0DC26FE04190083C675 /* EggYellow2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121EE0DB26FE04190083C675 /* EggYellow2.swift */; };
 		125537BF27046C570047713E /* Montserrat-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 125537BE27046C570047713E /* Montserrat-ExtraBold.ttf */; };
 		125537C127046E610047713E /* Montserrat-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 125537C027046E610047713E /* Montserrat-Light.ttf */; };
+		125537C92704F6230047713E /* ButtonWithEgg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125537C82704F6230047713E /* ButtonWithEgg.swift */; };
+		125537CB2704F68C0047713E /* ButtonStandart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125537CA2704F68C0047713E /* ButtonStandart.swift */; };
+		125537CD2704F7030047713E /* ThinBoldHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125537CC2704F7030047713E /* ThinBoldHeader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +39,9 @@
 		121EE0DB26FE04190083C675 /* EggYellow2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggYellow2.swift; sourceTree = "<group>"; };
 		125537BE27046C570047713E /* Montserrat-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraBold.ttf"; sourceTree = "<group>"; };
 		125537C027046E610047713E /* Montserrat-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.ttf"; sourceTree = "<group>"; };
+		125537C82704F6230047713E /* ButtonWithEgg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonWithEgg.swift; sourceTree = "<group>"; };
+		125537CA2704F68C0047713E /* ButtonStandart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStandart.swift; sourceTree = "<group>"; };
+		125537CC2704F7030047713E /* ThinBoldHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThinBoldHeader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,15 +74,11 @@
 		121EE0C126FDEB220083C675 /* Eggtime */ = {
 			isa = PBXGroup;
 			children = (
-				125537BD27046C280047713E /* Fonts */,
 				121EE0C226FDEB220083C675 /* EggtimeApp.swift */,
-				121EE0C426FDEB220083C675 /* ContentView.swift */,
-				121EE0D526FDF9FA0083C675 /* BoiledDetails.swift */,
-				121EE0D726FDFFB30083C675 /* CookedEgg.swift */,
-				121EE0D926FE03E60083C675 /* EggYellow1.swift */,
-				121EE0DB26FE04190083C675 /* EggYellow2.swift */,
-				121EE0D126FDEFEB0083C675 /* EggShape.swift */,
-				121EE0D326FDF0D90083C675 /* Egg.swift */,
+				125537C72704F5F10047713E /* View */,
+				125537CE2704F7380047713E /* Components */,
+				125537C62704F5CD0047713E /* Shapes */,
+				125537BD27046C280047713E /* Fonts */,
 				121EE0C626FDEB230083C675 /* Assets.xcassets */,
 				121EE0CB26FDEB230083C675 /* Info.plist */,
 				121EE0C826FDEB230083C675 /* Preview Content */,
@@ -100,6 +102,37 @@
 			);
 			name = Fonts;
 			path = ../Eggtime.xcodeproj/Fonts;
+			sourceTree = "<group>";
+		};
+		125537C62704F5CD0047713E /* Shapes */ = {
+			isa = PBXGroup;
+			children = (
+				121EE0D726FDFFB30083C675 /* CookedEgg.swift */,
+				121EE0D926FE03E60083C675 /* EggYellow1.swift */,
+				121EE0DB26FE04190083C675 /* EggYellow2.swift */,
+				121EE0D126FDEFEB0083C675 /* EggShape.swift */,
+				121EE0D326FDF0D90083C675 /* Egg.swift */,
+			);
+			path = Shapes;
+			sourceTree = "<group>";
+		};
+		125537C72704F5F10047713E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				121EE0C426FDEB220083C675 /* ContentView.swift */,
+				121EE0D526FDF9FA0083C675 /* BoiledDetails.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		125537CE2704F7380047713E /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				125537CC2704F7030047713E /* ThinBoldHeader.swift */,
+				125537CA2704F68C0047713E /* ButtonStandart.swift */,
+				125537C82704F6230047713E /* ButtonWithEgg.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,8 +208,11 @@
 			files = (
 				121EE0D226FDEFEB0083C675 /* EggShape.swift in Sources */,
 				121EE0C526FDEB220083C675 /* ContentView.swift in Sources */,
+				125537CB2704F68C0047713E /* ButtonStandart.swift in Sources */,
 				121EE0D826FDFFB30083C675 /* CookedEgg.swift in Sources */,
+				125537CD2704F7030047713E /* ThinBoldHeader.swift in Sources */,
 				121EE0DA26FE03E60083C675 /* EggYellow1.swift in Sources */,
+				125537C92704F6230047713E /* ButtonWithEgg.swift in Sources */,
 				121EE0DC26FE04190083C675 /* EggYellow2.swift in Sources */,
 				121EE0D626FDF9FA0083C675 /* BoiledDetails.swift in Sources */,
 				121EE0C326FDEB220083C675 /* EggtimeApp.swift in Sources */,
