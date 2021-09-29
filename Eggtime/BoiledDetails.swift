@@ -12,12 +12,7 @@ struct BoiledDetails: View {
         VStack(spacing: 20) {
             HStack {
                 VStack(alignment: .leading) {
-                    HStack {
-                        Text("Set")
-                            .font(Font.custom("Montserrat-Light", size: 20))
-                        Text("boiled details")
-                            .font(Font.custom("Montserrat-ExtraBold", size: 20))
-                    }
+                    ThinBoldHeader(thinText: "Set", boldText: "boiled details")
                     Text("Prepare eggs as you like!")
                         .font(Font.custom("Montserrat-Light", size: 17))
                         .foregroundColor(.secondary)
@@ -34,111 +29,29 @@ struct BoiledDetails: View {
                     .offset(x: 80)
             }
             VStack(spacing: 25) {
+                ThinBoldHeader(thinText: "Egg", boldText: "temperature")
                 HStack {
-                    Text("Egg")
-                        .font(Font.custom("Montserrat-Light", size: 20))
-                    Text("temperature")
-                        .font(Font.custom("Montserrat-ExtraBold", size: 20))
-                    Spacer()
-                }
-                HStack {
-                    Text("Fridge temperature")
-                        .frame(width: 180, height: 60)
-                        .background(RoundedRectangle(cornerRadius: 5)
-                                        .stroke(lineWidth: 2)
-                        )
-                        .foregroundColor(Color(#colorLiteral(red: 0.9013573527, green: 0.5734035373, blue: 0.4102450013, alpha: 1)))
-                    Text("Room temperature")
-                        .frame(width: 180, height: 60)
-                        .background(RoundedRectangle(cornerRadius: 5)
-                                        .stroke(lineWidth: 2)
-                        )
-                        .foregroundColor(Color(#colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)))
+                    ButtonStandart(text: "Fridge temperature", horizontalPadding: 20, isSelected: true)
+                    ButtonStandart(text: "Room temperature", horizontalPadding: 20, isSelected: false)
                 }
                 
             }
             
             VStack(spacing: 25) {
-                HStack {
-                    Text("Egg")
-                        .font(Font.custom("Montserrat-Light", size: 20))
-                    Text("size")
-                        .font(Font.custom("Montserrat-ExtraBold", size: 20))
-                    Spacer()
-                }
+                ThinBoldHeader(thinText: "Egg", boldText: "size")
                 HStack(spacing: 30) {
-                    Text("S")
-                        .frame(width: 110, height: 60)
-                        .background(RoundedRectangle(cornerRadius: 5)
-                                        .stroke(lineWidth: 2)
-                        )
-                        .foregroundColor(Color(#colorLiteral(red: 0.9013573527, green: 0.5734035373, blue: 0.4102450013, alpha: 1)))
-                    Text("M")
-                        .frame(width: 110, height: 60)
-                        .background(RoundedRectangle(cornerRadius: 5)
-                                        .stroke(lineWidth: 2)
-                        )
-                        .foregroundColor(Color(#colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)))
-                    Text("L")
-                        .frame(width: 110, height: 60)
-                        .background(RoundedRectangle(cornerRadius: 5)
-                                        .stroke(lineWidth: 2)
-                        )
-                        .foregroundColor(Color(#colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)))
+                    ButtonStandart(text: "S", horizontalPadding: 45, isSelected: true)
+                    ButtonStandart(text: "M", horizontalPadding: 45, isSelected: false)
+                    ButtonStandart(text: "L", horizontalPadding: 45, isSelected: false)
                 }
             }
             
             VStack(spacing: 50) {
-                HStack {
-                    Text("Egg")
-                        .font(Font.custom("Montserrat-Light", size: 20))
-                    Text("boiled type")
-                        .font(Font.custom("Montserrat-ExtraBold", size: 20))
-                    Spacer()
-                }
-                HStack(spacing: 75) {
-                    ZStack {
-                        Text("Soft")
-                            .padding(.vertical)
-                            .frame(width: 80, height: 110, alignment: .bottom)
-                            .background(RoundedRectangle(cornerRadius: 5)
-                                            .stroke(lineWidth: 2)
-                            )
-                            .foregroundColor(Color(#colorLiteral(red: 0.9013573527, green: 0.5734035373, blue: 0.4102450013, alpha: 1)))
-                        CookedEgg()
-                            .scaleEffect(x: 0.25, y: 0.25, anchor: .center)
-                            .frame(width: 20, height: 20)
-                            .offset(y: -50)
-                    }
-                    ZStack {
-                        Text("Medium")
-                            .foregroundColor(Color(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)))
-                            .padding(.vertical)
-                            .frame(width: 80, height: 110, alignment: .bottom)
-                            .background(RoundedRectangle(cornerRadius: 5)
-                                            .stroke(lineWidth: 2)
-                            )
-                            .foregroundColor(Color(#colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)))
-                        CookedEgg()
-                            .scaleEffect(x: 0.25, y: 0.25, anchor: .center)
-                            .frame(width: 20, height: 20)
-                            .offset(y: -50)
-                    }
-                    
-                    ZStack {
-                        Text("Hard")
-                            .foregroundColor(Color(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)))
-                            .padding(.bottom)
-                            .frame(width: 80, height: 110, alignment: .bottom)
-                            .background(RoundedRectangle(cornerRadius: 5)
-                                            .stroke(lineWidth: 2)
-                            )
-                            .foregroundColor(Color(#colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)))
-                        CookedEgg()
-                            .scaleEffect(x: 0.25, y: 0.25, anchor: .center)
-                            .frame(width: 20, height: 20)
-                            .offset(y: -50)
-                    }
+                ThinBoldHeader(thinText: "Egg", boldText: "boiled type")
+                HStack(spacing: 50.0) {
+                    ButtonWithEgg(text: "Soft", isSelected: true)
+                    ButtonWithEgg(text: "Medium", isSelected: false)
+                    ButtonWithEgg(text: "Hard", isSelected: false)
                 }
             }
             
@@ -169,5 +82,56 @@ struct BoiledDetails: View {
 struct BoiledDetails_Previews: PreviewProvider {
     static var previews: some View {
         BoiledDetails()
+            .preferredColorScheme(.dark)
+    }
+}
+
+struct ButtonWithEgg: View {
+    var text: String
+    var isSelected: Bool
+    var body: some View {
+        ZStack {
+            Text(text)
+                .foregroundColor(isSelected ? Color(#colorLiteral(red: 0.9013573527, green: 0.5734035373, blue: 0.4102450013, alpha: 1)) : .primary)
+                .padding(.vertical)
+                .frame(width: 90, height: 110, alignment: .bottom)
+                .background(RoundedRectangle(cornerRadius: 5)
+                                .stroke(lineWidth: 2)
+                )
+                .foregroundColor(isSelected ? Color(#colorLiteral(red: 0.9013573527, green: 0.5734035373, blue: 0.4102450013, alpha: 1)) : Color(#colorLiteral(red: 0.8038417101, green: 0.8039775491, blue: 0.8038237691, alpha: 1)))
+            CookedEgg()
+                .scaleEffect(x: 0.25, y: 0.25, anchor: .center)
+                .frame(width: 20, height: 20)
+                .offset(y: -50)
+        }
+    }
+}
+
+struct ButtonStandart: View {
+    var text: String
+    var horizontalPadding: CGFloat
+    var isSelected: Bool
+    var body: some View {
+        Text(text)
+            .padding(.horizontal, horizontalPadding)
+            .padding(.vertical, 19)
+            .background(RoundedRectangle(cornerRadius: 5)
+                            .stroke(lineWidth: 2)
+            )
+            .foregroundColor(isSelected ? Color(#colorLiteral(red: 0.9013573527, green: 0.5734035373, blue: 0.4102450013, alpha: 1)) : Color(#colorLiteral(red: 0.8038417101, green: 0.8039775491, blue: 0.8038237691, alpha: 1)))
+    }
+}
+
+struct ThinBoldHeader: View {
+    var thinText: String
+    var boldText: String
+    var body: some View {
+        HStack {
+            Text(thinText)
+                .font(Font.custom("Montserrat-Light", size: 20))
+            Text(boldText)
+                .font(Font.custom("Montserrat-ExtraBold", size: 20))
+            Spacer()
+        }
     }
 }
