@@ -10,12 +10,14 @@ import SwiftUI
 struct Egg: View {
     var body: some View {
         EggShape()
-            .fill(LinearGradient(
-                    gradient: Gradient(stops: [
-                .init(color: Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)), location: 0),
-                .init(color: Color(#colorLiteral(red: 0.862500011920929, green: 0.6138125061988831, blue: 0.2407812476158142, alpha: 1)), location: 1)]),
-                    startPoint: UnitPoint(x: 0.050215104847685765, y: -0.0517240971499483),
-                    endPoint: UnitPoint(x: 0.7747487028645977, y: 0.8405172174560209)))
+            .fill(AngularGradient(
+                gradient: Gradient(stops: [
+            .init(color: Color(#colorLiteral(red: 0.6470588445663452, green: 0.4156862795352936, blue: 0.1921568661928177, alpha: 1)), location: 0.0833333358168602),
+            .init(color: Color(#colorLiteral(red: 0.9725490212440491, green: 0.886274516582489, blue: 0.7960784435272217, alpha: 1)), location: 0.4583333432674408),
+            .init(color: Color(#colorLiteral(red: 0.960493803024292, green: 0.8688453435897827, blue: 0.7737109661102295, alpha: 1)), location: 0.5572916865348816),
+            .init(color: Color(#colorLiteral(red: 0.6537699699401855, green: 0.4253891110420227, blue: 0.20460882782936096, alpha: 1)), location: 0.8958333134651184)]),
+                center: UnitPoint(x: 0.45089284919434713, y: 0.49999999359200287))
+            )
     }
 }
 

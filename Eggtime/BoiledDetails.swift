@@ -9,31 +9,36 @@ import SwiftUI
 
 struct BoiledDetails: View {
     var body: some View {
-        VStack {
+        VStack(spacing: 20) {
             HStack {
                 VStack(alignment: .leading) {
                     HStack {
                         Text("Set")
-                            .font(.system(size: 25, weight: .regular, design: .default))
+                            .font(Font.custom("Montserrat-Light", size: 20))
                         Text("boiled details")
-                            .font(.system(size: 25, weight: .bold, design: .default))
+                            .font(Font.custom("Montserrat-ExtraBold", size: 20))
                     }
                     Text("Prepare eggs as you like!")
-                        .font(.system(size: 17, weight: .semibold, design: .default))
-                        .foregroundColor(.gray)
+                        .font(Font.custom("Montserrat-Light", size: 17))
+                        .foregroundColor(.secondary)
                 }
                 Spacer()
                 Egg()
                     .frame(width: 150, height: 190)
+                    .overlay(
+                        EggShape()
+                            .fill(Color(#colorLiteral(red: 0.6470588445663452, green: 0.4156862795352936, blue: 0.1921568661928177, alpha: 1)))
+                            .scaleEffect(0.65)
+                            .blur(radius: 20)
+                    )
                     .offset(x: 80)
             }
-            .padding()
             VStack(spacing: 25) {
                 HStack {
                     Text("Egg")
-                        .font(.system(size: 20, weight: .regular, design: .default))
+                        .font(Font.custom("Montserrat-Light", size: 20))
                     Text("temperature")
-                        .font(.system(size: 20, weight: .semibold, design: .default))
+                        .font(Font.custom("Montserrat-ExtraBold", size: 20))
                     Spacer()
                 }
                 HStack {
@@ -52,14 +57,13 @@ struct BoiledDetails: View {
                 }
                 
             }
-            .padding(20)
             
             VStack(spacing: 25) {
                 HStack {
                     Text("Egg")
-                        .font(.system(size: 20, weight: .regular, design: .default))
-                    Text("Size")
-                        .font(.system(size: 20, weight: .semibold, design: .default))
+                        .font(Font.custom("Montserrat-Light", size: 20))
+                    Text("size")
+                        .font(Font.custom("Montserrat-ExtraBold", size: 20))
                     Spacer()
                 }
                 HStack(spacing: 30) {
@@ -83,14 +87,13 @@ struct BoiledDetails: View {
                         .foregroundColor(Color(#colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)))
                 }
             }
-            .padding(20)
             
             VStack(spacing: 50) {
                 HStack {
                     Text("Egg")
-                        .font(.system(size: 20, weight: .regular, design: .default))
+                        .font(Font.custom("Montserrat-Light", size: 20))
                     Text("boiled type")
-                        .font(.system(size: 20, weight: .semibold, design: .default))
+                        .font(Font.custom("Montserrat-ExtraBold", size: 20))
                     Spacer()
                 }
                 HStack(spacing: 75) {
@@ -138,14 +141,14 @@ struct BoiledDetails: View {
                     }
                 }
             }
-            .padding(20)
             
             HStack(alignment: .bottom) {
                 VStack(alignment: .leading) {
                     Text("Estimated boiled time")
+                        .font(Font.custom("Montserrat-Light", size: 17))
                     HStack(alignment: .firstTextBaseline) {
                         Text("8:30")
-                            .font(.system(size: 35, weight: .heavy))
+                            .font(Font.custom("Montserrat-ExtraBold", size: 35))
                         Text("MIN")
                             .font(.footnote)
                             .bold()
@@ -158,8 +161,8 @@ struct BoiledDetails: View {
                     .background(Color(#colorLiteral(red: 0.9013573527, green: 0.5734035373, blue: 0.4102450013, alpha: 1)))
                     .clipShape(RoundedRectangle(cornerRadius: 7, style: .continuous))
             }
-            .padding(.horizontal)
         }
+        .padding(.horizontal)
     }
 }
 
