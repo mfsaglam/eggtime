@@ -28,8 +28,8 @@ struct BoiledDetails: View {
                     .overlay(
                         EggShape()
                             .fill(Color(#colorLiteral(red: 0.6470588445663452, green: 0.4156862795352936, blue: 0.1921568661928177, alpha: 1)))
-                            .scaleEffect(0.65)
-                            .blur(radius: 20)
+                            .scaleEffect(0.70)
+                            .blur(radius: 40)
                     )
                     .scaleEffect(CGSize(width: 0.65, height: 0.65), anchor: .center)
                     .frame(width: 90, height: 210)
@@ -81,11 +81,13 @@ struct BoiledDetails: View {
                     }
                 }
                 Spacer()
-                Image(systemName: "chevron.right")
-                    .foregroundColor(.white)
-                    .frame(width: 60, height: 60)
-                    .background(Color(#colorLiteral(red: 0.9013573527, green: 0.5734035373, blue: 0.4102450013, alpha: 1)))
-                    .clipShape(RoundedRectangle(cornerRadius: 7, style: .continuous))
+                NavigationLink(destination: BoilTime()) {
+                    Image(systemName: "chevron.right")
+                        .foregroundColor(.white)
+                        .frame(width: 60, height: 60)
+                        .background(Color(#colorLiteral(red: 0.9013573527, green: 0.5734035373, blue: 0.4102450013, alpha: 1)))
+                        .clipShape(RoundedRectangle(cornerRadius: 7, style: .continuous))
+                }
             }
         }
         .padding(.horizontal)
