@@ -18,6 +18,7 @@ struct Egg: View {
             .init(color: Color(#colorLiteral(red: 0.6537699699401855, green: 0.4253891110420227, blue: 0.20460882782936096, alpha: 1)), location: 0.8958333134651184)]),
                 center: UnitPoint(x: 0.45089284919434713, y: 0.49999999359200287))
             )
+            .frame(width: 250, height: 320)
     }
 }
 

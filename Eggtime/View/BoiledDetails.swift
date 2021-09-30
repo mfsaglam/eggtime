@@ -17,7 +17,7 @@ struct BoiledDetails: View {
         VStack(spacing: 20) {
             HStack(alignment: .top) {
                 VStack(alignment: .leading) {
-                    ThinBoldHeader(thinText: "Set", boldText: "boiled details")
+                    ThinBoldHeader(thinText: "Set", boldText: "boiled details", size: 26)
                     Text("Prepare eggs as you like!")
                         .font(Font.custom("Montserrat-Light", size: 17))
                         .foregroundColor(.secondary)
@@ -25,17 +25,21 @@ struct BoiledDetails: View {
                 .offset(y: 30)
                 Spacer()
                 Egg()
-                    .frame(width: 150, height: 190)
                     .overlay(
                         EggShape()
                             .fill(Color(#colorLiteral(red: 0.6470588445663452, green: 0.4156862795352936, blue: 0.1921568661928177, alpha: 1)))
                             .scaleEffect(0.65)
                             .blur(radius: 20)
                     )
-                    .offset(x: 80)
+                    .scaleEffect(CGSize(width: 0.65, height: 0.65), anchor: .center)
+                    .frame(width: 90, height: 210)
+                    .offset(x: 40)
             }
             VStack(spacing: 25) {
-                ThinBoldHeader(thinText: "Egg", boldText: "temperature")
+                HStack {
+                    ThinBoldHeader(thinText: "Egg", boldText: "temperature", size: 20)
+                    Spacer()
+                }
                 HStack(spacing: 0) {
                     ButtonStandart(selectedItem: $temperature, text: ["Fridge temperature", "Room temperature"], horizontalPadding: 20)
                 }
@@ -43,14 +47,20 @@ struct BoiledDetails: View {
             }
             
             VStack(spacing: 25) {
-                ThinBoldHeader(thinText: "Egg", boldText: "size")
+                HStack {
+                    ThinBoldHeader(thinText: "Egg", boldText: "size", size: 20)
+                    Spacer()
+                }
                 HStack(spacing: 0) {
                     ButtonStandart(selectedItem: $size, text: ["S", "M", "L"], horizontalPadding: 45)
                 }
             }
             
             VStack(spacing: 50) {
-                ThinBoldHeader(thinText: "Egg", boldText: "boiled type")
+                HStack {
+                    ThinBoldHeader(thinText: "Egg", boldText: "boiled type", size: 20)
+                    Spacer()
+                }
                 HStack(spacing: 0) {
                     ButtonWithEgg(text: ["Soft", "Medium", "Hard"], selectedItem: $boiledType)
                 }
@@ -79,6 +89,7 @@ struct BoiledDetails: View {
             }
         }
         .padding(.horizontal)
+        .navigationBarHidden(true)
     }
 }
 

@@ -10,19 +10,19 @@ import SwiftUI
 struct ThinBoldHeader: View {
     var thinText: String
     var boldText: String
+    var size: CGFloat
     var body: some View {
         HStack {
             Text(thinText)
-                .font(Font.custom("Montserrat-Light", size: 20))
+                .font(Font.custom("Montserrat-Light", size: size))
             Text(boldText)
-                .font(Font.custom("Montserrat-ExtraBold", size: 20))
-            Spacer()
+                .font(Font.custom("Montserrat-ExtraBold", size: size))
         }
     }
 }
 
 struct ThinBoldHeader_Previews: PreviewProvider {
     static var previews: some View {
-        ThinBoldHeader(thinText: "Test", boldText: "Test")
+        ThinBoldHeader(thinText: "Test", boldText: "Test", size: 20)
     }
 }
