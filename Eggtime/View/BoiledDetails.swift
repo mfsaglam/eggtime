@@ -9,9 +9,13 @@ import SwiftUI
 
 struct BoiledDetails: View {
     
+    @ObservedObject var vm = BoiledDetailsVM()
+    
     @State var temperature: String = "Room temperature"
     @State var size: String = "M"
     @State var boiledType = "Soft"
+    @State var boiledTime = 0
+    
     
     var body: some View {
         VStack(spacing: 20) {
@@ -42,6 +46,9 @@ struct BoiledDetails: View {
                 }
                 HStack(spacing: 0) {
                     ButtonStandart(selectedItem: $temperature, text: ["Fridge temperature", "Room temperature"], horizontalPadding: 20)
+                        .onTapGesture {
+                            boiledTime = vm.getEstimatedBoiledTime(temperature: temperature, size: size, hardness: boiledType)
+                        }
                 }
                 
             }
@@ -53,6 +60,9 @@ struct BoiledDetails: View {
                 }
                 HStack(spacing: 0) {
                     ButtonStandart(selectedItem: $size, text: ["S", "M", "L"], horizontalPadding: 45)
+                        .onTapGesture {
+                            boiledTime = vm.getEstimatedBoiledTime(temperature: temperature, size: size, hardness: boiledType)
+                        }
                 }
             }
             
@@ -63,6 +73,9 @@ struct BoiledDetails: View {
                 }
                 HStack(spacing: 0) {
                     ButtonWithEgg(text: ["Soft", "Medium", "Hard"], selectedItem: $boiledType)
+                        .onTapGesture {
+                            boiledTime = vm.getEstimatedBoiledTime(temperature: temperature, size: size, hardness: boiledType)
+                        }
                 }
             }
             
@@ -73,7 +86,7 @@ struct BoiledDetails: View {
                     Text("Estimated boiled time")
                         .font(Font.custom("Montserrat-Light", size: 17))
                     HStack(alignment: .firstTextBaseline) {
-                        Text("8:30")
+                        boiledTime.convertToMinutes()
                             .font(Font.custom("Montserrat-ExtraBold", size: 35))
                         Text("MIN")
                             .font(.footnote)
@@ -81,7 +94,7 @@ struct BoiledDetails: View {
                     }
                 }
                 Spacer()
-                NavigationLink(destination: BoilTime()) {
+                NavigationLink(destination: BoilTime(boiledTime: boiledTime, boiledType: boiledType)) {
                     Image(systemName: "chevron.right")
                         .foregroundColor(.white)
                         .frame(width: 60, height: 60)
@@ -92,6 +105,9 @@ struct BoiledDetails: View {
         }
         .padding(.horizontal)
         .navigationBarHidden(true)
+        .onAppear {
+            boiledTime = vm.getEstimatedBoiledTime(temperature: temperature, size: size, hardness: boiledType)
+        }
     }
 }
 

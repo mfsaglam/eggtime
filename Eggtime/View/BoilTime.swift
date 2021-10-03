@@ -8,7 +8,12 @@
 import SwiftUI
 
 struct BoilTime: View {
+    
+    @State var boiledTime: Int
+    @State var boiledType: String
+    
     @Environment(\.presentationMode) var presentationMode
+    
     var body: some View {
         VStack {
             HStack {
@@ -18,7 +23,7 @@ struct BoilTime: View {
                         presentationMode.wrappedValue.dismiss()
                     }
                 Spacer()
-                ThinBoldHeader(thinText: "", boldText: "Soft boiled eggs", size: 20)
+                ThinBoldHeader(thinText: "", boldText: "\(boiledType) boiled eggs", size: 20)
                     .offset(x: -21.5)
                 Spacer()
             }
@@ -37,13 +42,13 @@ struct BoilTime: View {
                     .opacity(0.05)
                     .padding()
                     .frame(width: 350, height: 350)
-                Circle()
-                    .stroke(lineWidth: 7)
-                    .foregroundColor(.secondary)
-                    .opacity(0.2)
-                    .padding()
-                    .frame(width: 300, height: 300)
-                    .shadow(radius: 20)
+//                Circle()
+//                    .stroke(lineWidth: 7)
+//                    .foregroundColor(.secondary)
+//                    .opacity(0.2)
+//                    .padding()
+//                    .frame(width: 300, height: 300)
+//                    .shadow(radius: 20)
                 Egg()
                     .overlay(
                         EggShape()
@@ -52,18 +57,13 @@ struct BoilTime: View {
                             .blur(radius: 40)
                     )
                     .scaleEffect(CGSize(width: 0.45, height: 0.45), anchor: .center)
-                    .offset(y: 55)
+                    .offset(y: 70)
                     .mask(
                         Circle()
-                            .frame(width: 209, height: 206)
+                            .frame(width: 235, height: 235)
                     )
                 
-                Circle()
-                    .stroke(lineWidth: 12)
-                    .foregroundColor(.secondary)
-                    .opacity(0.2)
-                    .padding()
-                    .frame(width: 250, height: 250)
+                Countdown(countTo: boiledTime)
                     
                 
                 
@@ -73,7 +73,7 @@ struct BoilTime: View {
                 IconWithText(image: "timer", text: "Boiled time")
                 Spacer()
                 HStack(alignment: .firstTextBaseline) {
-                    Text("8:30")
+                    Text("\(boiledTime)")
                         .font(Font.custom("Montserrat-ExtraBold", size: 25))
                     Text("MIN")
                         .font(.footnote)
@@ -114,24 +114,7 @@ struct BoilTime: View {
 
 struct BoilTime_Previews: PreviewProvider {
     static var previews: some View {
-        BoilTime()
+        BoilTime(boiledTime: 20, boiledType: "Soft")
         
-    }
-}
-
-struct IconWithText: View {
-    var image: String
-    var text: String
-    var body: some View {
-        HStack {
-            Image(systemName: image)
-                .font(.title)
-                .frame(width: 45, height: 45)
-                .background(Color(#colorLiteral(red: 0.9013573527, green: 0.5734035373, blue: 0.4102450013, alpha: 1)).opacity(0.3))
-                .foregroundColor(Color(#colorLiteral(red: 0.9013573527, green: 0.5734035373, blue: 0.4102450013, alpha: 1)))
-                .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
-            ThinBoldHeader(thinText: text, boldText: "", size: 20)
-                .foregroundColor(.secondary)
-        }
     }
 }

@@ -12,21 +12,22 @@ struct ButtonStandart: View {
     @Binding var selectedItem: String
     var text: [String]
     var horizontalPadding: CGFloat
+    @Namespace var animation
     
     var body: some View {
-        ForEach(text.indices) { tag in
+        ForEach(text, id: \.self) { buttonText in
             HStack {
                 Group {
-                    if text[tag].contains(" ") {
+                    if buttonText.contains(" ") {
                         HStack {
-                            Text("\(text[tag].components(separatedBy: " ")[0])")
+                            Text("\(buttonText.components(separatedBy: " ")[0])")
                                 .font(.callout)
-                            Text("\(text[tag].components(separatedBy: " ")[1])")
+                            Text("\(buttonText.components(separatedBy: " ")[1])")
                                 .font(.callout)
                                 .bold()
                         }
                     } else {
-                        Text(text[tag])
+                        Text(buttonText)
                             .font(.headline)
                     }
                 }
@@ -35,13 +36,13 @@ struct ButtonStandart: View {
                 .background(RoundedRectangle(cornerRadius: 5)
                                 .stroke(lineWidth: 2)
                 )
-                .foregroundColor(selectedItem == text[tag] ? Color(#colorLiteral(red: 0.9013573527, green: 0.5734035373, blue: 0.4102450013, alpha: 1)) : Color(#colorLiteral(red: 0.8038417101, green: 0.8039775491, blue: 0.8038237691, alpha: 1)))
+                .foregroundColor(selectedItem == buttonText ? Color(#colorLiteral(red: 0.9013573527, green: 0.5734035373, blue: 0.4102450013, alpha: 1)) : Color(#colorLiteral(red: 0.8038417101, green: 0.8039775491, blue: 0.8038237691, alpha: 1)))
                 .onTapGesture {
                     withAnimation(.interactiveSpring(response: 0.5, dampingFraction: 0.6, blendDuration: 0.6)) {
-                        selectedItem = text[tag]
+                        selectedItem = buttonText
                     }
                 }
-                if tag != text.endIndex - 1 {
+                if text.firstIndex(of: buttonText) != text.endIndex - 1 {
                     Spacer()
                 }
             }

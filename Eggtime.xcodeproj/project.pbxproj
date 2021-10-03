@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		120EBC552709C2B200BD3987 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120EBC542709C2B200BD3987 /* Extensions.swift */; };
 		121EE0C326FDEB220083C675 /* EggtimeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121EE0C226FDEB220083C675 /* EggtimeApp.swift */; };
 		121EE0C526FDEB220083C675 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121EE0C426FDEB220083C675 /* ContentView.swift */; };
 		121EE0C726FDEB230083C675 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 121EE0C626FDEB230083C675 /* Assets.xcassets */; };
@@ -24,9 +25,15 @@
 		125537CD2704F7030047713E /* ThinBoldHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125537CC2704F7030047713E /* ThinBoldHeader.swift */; };
 		125537D02705C3250047713E /* BoilTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125537CF2705C3250047713E /* BoilTime.swift */; };
 		125537D22705D6E50047713E /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125537D12705D6E40047713E /* ActionButton.swift */; };
+		125537D42707243C0047713E /* IconWithText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125537D32707243C0047713E /* IconWithText.swift */; };
+		125537D6270728C60047713E /* Countdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125537D5270728C60047713E /* Countdown.swift */; };
+		125537DC270866410047713E /* AzeretMono-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 125537DB270866400047713E /* AzeretMono-ExtraBold.ttf */; };
+		125537DE270867690047713E /* EggModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125537DD270867690047713E /* EggModel.swift */; };
+		125537E12708689F0047713E /* BoiledDetailsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125537E02708689F0047713E /* BoiledDetailsVM.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		120EBC542709C2B200BD3987 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		121EE0BF26FDEB220083C675 /* Eggtime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eggtime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		121EE0C226FDEB220083C675 /* EggtimeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggtimeApp.swift; sourceTree = "<group>"; };
 		121EE0C426FDEB220083C675 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -46,6 +53,11 @@
 		125537CC2704F7030047713E /* ThinBoldHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThinBoldHeader.swift; sourceTree = "<group>"; };
 		125537CF2705C3250047713E /* BoilTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoilTime.swift; sourceTree = "<group>"; };
 		125537D12705D6E40047713E /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
+		125537D32707243C0047713E /* IconWithText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconWithText.swift; sourceTree = "<group>"; };
+		125537D5270728C60047713E /* Countdown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Countdown.swift; sourceTree = "<group>"; };
+		125537DB270866400047713E /* AzeretMono-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AzeretMono-ExtraBold.ttf"; sourceTree = "<group>"; };
+		125537DD270867690047713E /* EggModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggModel.swift; sourceTree = "<group>"; };
+		125537E02708689F0047713E /* BoiledDetailsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoiledDetailsVM.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +71,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		120EBC562709C2BA00BD3987 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				120EBC542709C2B200BD3987 /* Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		121EE0B626FDEB220083C675 = {
 			isa = PBXGroup;
 			children = (
@@ -79,10 +99,13 @@
 			isa = PBXGroup;
 			children = (
 				121EE0C226FDEB220083C675 /* EggtimeApp.swift */,
+				125537DF270867730047713E /* Model */,
+				125537E2270868A60047713E /* ViewModel */,
 				125537C72704F5F10047713E /* View */,
 				125537CE2704F7380047713E /* Components */,
 				125537C62704F5CD0047713E /* Shapes */,
 				125537BD27046C280047713E /* Fonts */,
+				120EBC562709C2BA00BD3987 /* Extensions */,
 				121EE0C626FDEB230083C675 /* Assets.xcassets */,
 				121EE0CB26FDEB230083C675 /* Info.plist */,
 				121EE0C826FDEB230083C675 /* Preview Content */,
@@ -102,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				125537BE27046C570047713E /* Montserrat-ExtraBold.ttf */,
+				125537DB270866400047713E /* AzeretMono-ExtraBold.ttf */,
 				125537C027046E610047713E /* Montserrat-Light.ttf */,
 			);
 			name = Fonts;
@@ -134,11 +158,29 @@
 			isa = PBXGroup;
 			children = (
 				125537CC2704F7030047713E /* ThinBoldHeader.swift */,
+				125537D32707243C0047713E /* IconWithText.swift */,
+				125537D5270728C60047713E /* Countdown.swift */,
 				125537CA2704F68C0047713E /* ButtonStandart.swift */,
 				125537C82704F6230047713E /* ButtonWithEgg.swift */,
 				125537D12705D6E40047713E /* ActionButton.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		125537DF270867730047713E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				125537DD270867690047713E /* EggModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		125537E2270868A60047713E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				125537E02708689F0047713E /* BoiledDetailsVM.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,6 +241,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				125537C127046E610047713E /* Montserrat-Light.ttf in Resources */,
+				125537DC270866410047713E /* AzeretMono-ExtraBold.ttf in Resources */,
 				121EE0CA26FDEB230083C675 /* Preview Assets.xcassets in Resources */,
 				125537BF27046C570047713E /* Montserrat-ExtraBold.ttf in Resources */,
 				121EE0C726FDEB230083C675 /* Assets.xcassets in Resources */,
@@ -213,16 +256,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				121EE0D226FDEFEB0083C675 /* EggShape.swift in Sources */,
+				120EBC552709C2B200BD3987 /* Extensions.swift in Sources */,
 				121EE0C526FDEB220083C675 /* ContentView.swift in Sources */,
 				125537D22705D6E50047713E /* ActionButton.swift in Sources */,
+				125537D42707243C0047713E /* IconWithText.swift in Sources */,
 				125537D02705C3250047713E /* BoilTime.swift in Sources */,
 				125537CB2704F68C0047713E /* ButtonStandart.swift in Sources */,
 				121EE0D826FDFFB30083C675 /* CookedEgg.swift in Sources */,
 				125537CD2704F7030047713E /* ThinBoldHeader.swift in Sources */,
 				121EE0DA26FE03E60083C675 /* EggYellow1.swift in Sources */,
 				125537C92704F6230047713E /* ButtonWithEgg.swift in Sources */,
+				125537D6270728C60047713E /* Countdown.swift in Sources */,
+				125537E12708689F0047713E /* BoiledDetailsVM.swift in Sources */,
 				121EE0DC26FE04190083C675 /* EggYellow2.swift in Sources */,
 				121EE0D626FDF9FA0083C675 /* BoiledDetails.swift in Sources */,
+				125537DE270867690047713E /* EggModel.swift in Sources */,
 				121EE0C326FDEB220083C675 /* EggtimeApp.swift in Sources */,
 				121EE0D426FDF0D90083C675 /* Egg.swift in Sources */,
 			);
