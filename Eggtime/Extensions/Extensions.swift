@@ -12,7 +12,7 @@ extension Int {
         if self == 0 {
             return Text("0:00")
         } else {
-            return Text("\((self % 3600) / 60):\((self % 3600) % 60)0")
+            return Text("\((self % 3600) / 60):\((self % 3600) % 60)")
 
         }
     }

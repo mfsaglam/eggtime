@@ -54,6 +54,6 @@ struct ButtonWithEgg: View {
 
 struct ButtonWithEgg_Previews: PreviewProvider {
     static var previews: some View {
-        ButtonWithEgg(text: ["Soft"], selectedItem: .constant(""))
+        ButtonWithEgg(text: ["Soft"], selectedItem: .constant("Soft"))
     }
 }

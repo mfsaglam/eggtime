@@ -26,10 +26,10 @@
 		125537D02705C3250047713E /* BoilTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125537CF2705C3250047713E /* BoilTime.swift */; };
 		125537D22705D6E50047713E /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125537D12705D6E40047713E /* ActionButton.swift */; };
 		125537D42707243C0047713E /* IconWithText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125537D32707243C0047713E /* IconWithText.swift */; };
-		125537D6270728C60047713E /* Countdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125537D5270728C60047713E /* Countdown.swift */; };
 		125537DC270866410047713E /* AzeretMono-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 125537DB270866400047713E /* AzeretMono-ExtraBold.ttf */; };
 		125537DE270867690047713E /* EggModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125537DD270867690047713E /* EggModel.swift */; };
 		125537E12708689F0047713E /* BoiledDetailsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125537E02708689F0047713E /* BoiledDetailsVM.swift */; };
+		12EBB2F1270D9B560009579C /* ProgressCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EBB2F0270D9B560009579C /* ProgressCircle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,10 +54,10 @@
 		125537CF2705C3250047713E /* BoilTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoilTime.swift; sourceTree = "<group>"; };
 		125537D12705D6E40047713E /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
 		125537D32707243C0047713E /* IconWithText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconWithText.swift; sourceTree = "<group>"; };
-		125537D5270728C60047713E /* Countdown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Countdown.swift; sourceTree = "<group>"; };
 		125537DB270866400047713E /* AzeretMono-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AzeretMono-ExtraBold.ttf"; sourceTree = "<group>"; };
 		125537DD270867690047713E /* EggModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggModel.swift; sourceTree = "<group>"; };
 		125537E02708689F0047713E /* BoiledDetailsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoiledDetailsVM.swift; sourceTree = "<group>"; };
+		12EBB2F0270D9B560009579C /* ProgressCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCircle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,7 +159,7 @@
 			children = (
 				125537CC2704F7030047713E /* ThinBoldHeader.swift */,
 				125537D32707243C0047713E /* IconWithText.swift */,
-				125537D5270728C60047713E /* Countdown.swift */,
+				12EBB2F0270D9B560009579C /* ProgressCircle.swift */,
 				125537CA2704F68C0047713E /* ButtonStandart.swift */,
 				125537C82704F6230047713E /* ButtonWithEgg.swift */,
 				125537D12705D6E40047713E /* ActionButton.swift */,
@@ -266,7 +266,7 @@
 				125537CD2704F7030047713E /* ThinBoldHeader.swift in Sources */,
 				121EE0DA26FE03E60083C675 /* EggYellow1.swift in Sources */,
 				125537C92704F6230047713E /* ButtonWithEgg.swift in Sources */,
-				125537D6270728C60047713E /* Countdown.swift in Sources */,
+				12EBB2F1270D9B560009579C /* ProgressCircle.swift in Sources */,
 				125537E12708689F0047713E /* BoiledDetailsVM.swift in Sources */,
 				121EE0DC26FE04190083C675 /* EggYellow2.swift in Sources */,
 				121EE0D626FDF9FA0083C675 /* BoiledDetails.swift in Sources */,

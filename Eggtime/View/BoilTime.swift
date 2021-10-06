@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct BoilTime: View {
-    
+        
     @State var boiledTime: Int
     @State var boiledType: String
     
@@ -62,10 +62,7 @@ struct BoilTime: View {
                         Circle()
                             .frame(width: 235, height: 235)
                     )
-                
-                Countdown(countTo: boiledTime)
-                    
-                
+                ProgressCircle(countTo: $boiledTime)
                 
             }
             Spacer()
@@ -73,6 +70,7 @@ struct BoilTime: View {
                 IconWithText(image: "timer", text: "Boiled time")
                 Spacer()
                 HStack(alignment: .firstTextBaseline) {
+//                    Text("\(boiledTime)")
                     Text("\(boiledTime)")
                         .font(Font.custom("Montserrat-ExtraBold", size: 25))
                     Text("MIN")
@@ -103,7 +101,9 @@ struct BoilTime: View {
                     .foregroundColor(.secondary)
                     .multilineTextAlignment(.center)
                 Spacer()
-                ActionButton(text: "STOP")
+                ActionButton(text: "STOP") {
+                    presentationMode.wrappedValue.dismiss()
+                }
             }
         }
         .padding()
@@ -111,6 +111,7 @@ struct BoilTime: View {
         .navigationBarBackButtonHidden(true)
     }
 }
+
 
 struct BoilTime_Previews: PreviewProvider {
     static var previews: some View {

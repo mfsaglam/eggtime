@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ContentView: View {
     
+    @State var startCooking = false
+    
     var body: some View {
         NavigationView {
             ZStack {
@@ -52,8 +54,10 @@ struct ContentView: View {
                             
                     }
                     Spacer()
-                    NavigationLink(destination: BoiledDetails()) {
-                        ActionButton(text: "LET'S COOK")
+                    NavigationLink(destination: BoiledDetails(), isActive: $startCooking) {
+                        ActionButton(text: "LET'S COOK") {
+                            self.startCooking = true
+                        }
                     }
                 }
             }

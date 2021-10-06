@@ -9,12 +9,11 @@ import SwiftUI
 
 struct BoiledDetails: View {
     
-    @ObservedObject var vm = BoiledDetailsVM()
+    @StateObject var vm = BoiledDetailsVM()
     
     @State var temperature: String = "Room temperature"
     @State var size: String = "M"
     @State var boiledType = "Soft"
-    @State var boiledTime = 0
     
     
     var body: some View {
@@ -44,11 +43,10 @@ struct BoiledDetails: View {
                     ThinBoldHeader(thinText: "Egg", boldText: "temperature", size: 20)
                     Spacer()
                 }
-                HStack(spacing: 0) {
-                    ButtonStandart(selectedItem: $temperature, text: ["Fridge temperature", "Room temperature"], horizontalPadding: 20)
-                        .onTapGesture {
-                            boiledTime = vm.getEstimatedBoiledTime(temperature: temperature, size: size, hardness: boiledType)
-                        }
+                HStack {
+                    ButtonStandart(selectedItem: $temperature, text: "Fridge temperature", padding: 20)
+                    Spacer()
+                    ButtonStandart(selectedItem: $temperature, text: "Room temperature", padding: 20)
                 }
                 
             }
@@ -59,10 +57,11 @@ struct BoiledDetails: View {
                     Spacer()
                 }
                 HStack(spacing: 0) {
-                    ButtonStandart(selectedItem: $size, text: ["S", "M", "L"], horizontalPadding: 45)
-                        .onTapGesture {
-                            boiledTime = vm.getEstimatedBoiledTime(temperature: temperature, size: size, hardness: boiledType)
-                        }
+                    ButtonStandart(selectedItem: $size, text: "S", padding: 50)
+                    Spacer()
+                    ButtonStandart(selectedItem: $size, text: "M", padding: 50)
+                    Spacer()
+                    ButtonStandart(selectedItem: $size, text: "L", padding: 50)
                 }
             }
             
@@ -73,9 +72,6 @@ struct BoiledDetails: View {
                 }
                 HStack(spacing: 0) {
                     ButtonWithEgg(text: ["Soft", "Medium", "Hard"], selectedItem: $boiledType)
-                        .onTapGesture {
-                            boiledTime = vm.getEstimatedBoiledTime(temperature: temperature, size: size, hardness: boiledType)
-                        }
                 }
             }
             
@@ -86,7 +82,8 @@ struct BoiledDetails: View {
                     Text("Estimated boiled time")
                         .font(Font.custom("Montserrat-Light", size: 17))
                     HStack(alignment: .firstTextBaseline) {
-                        boiledTime.convertToMinutes()
+                        Text(Date().addingTimeInterval(TimeInterval(vm.estimatedBoiledTime)), style: .timer)
+                        Text("\(vm.estimatedBoiledTime)")
                             .font(Font.custom("Montserrat-ExtraBold", size: 35))
                         Text("MIN")
                             .font(.footnote)
@@ -94,7 +91,7 @@ struct BoiledDetails: View {
                     }
                 }
                 Spacer()
-                NavigationLink(destination: BoilTime(boiledTime: boiledTime, boiledType: boiledType)) {
+                NavigationLink(destination: BoilTime(boiledTime: vm.estimatedBoiledTime, boiledType: boiledType)) {
                     Image(systemName: "chevron.right")
                         .foregroundColor(.white)
                         .frame(width: 60, height: 60)
@@ -105,8 +102,17 @@ struct BoiledDetails: View {
         }
         .padding(.horizontal)
         .navigationBarHidden(true)
-        .onAppear {
-            boiledTime = vm.getEstimatedBoiledTime(temperature: temperature, size: size, hardness: boiledType)
+        .onChange(of: temperature) { temp in
+            vm.getEstimatedBoiledTime(temperature: temp, size: size, hardness: boiledType)
+        }
+        .onChange(of: size) { value in
+            vm.getEstimatedBoiledTime(temperature: temperature, size: value, hardness: boiledType)
+        }
+        .onChange(of: boiledType) { hardness in
+            vm.getEstimatedBoiledTime(temperature: temperature, size: size, hardness: hardness)
+        }
+        .onAppear() {
+            vm.getEstimatedBoiledTime(temperature: temperature, size: size, hardness: boiledType)
         }
     }
 }
