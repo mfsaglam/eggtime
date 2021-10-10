@@ -11,9 +11,13 @@ struct BoiledDetails: View {
     
     @StateObject var vm = BoiledDetailsVM()
     
-    @State var temperature: String = "Room temperature"
-    @State var size: String = "M"
-    @State var boiledType = "Soft"
+    @AppStorage(wrappedValue: "Room temperature", "temperture") var temperature
+    @AppStorage(wrappedValue: "M", "size") var size
+    @AppStorage(wrappedValue: "Soft", "boiledType") var boiledType
+    
+//    @State var temperature: String = "Room temperature"
+//    @State var size: String = "M"
+//    @State var boiledType = "Soft"
     
     
     var body: some View {
