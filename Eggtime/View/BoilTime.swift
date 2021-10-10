@@ -71,7 +71,7 @@ struct BoilTime: View {
                 Spacer()
                 HStack(alignment: .firstTextBaseline) {
 //                    Text("\(boiledTime)")
-                    Text("\(boiledTime)")
+                    Text("\(boiledTime.timeStyle())")
                         .font(Font.custom("Montserrat-ExtraBold", size: 25))
                     Text("MIN")
                         .font(.footnote)

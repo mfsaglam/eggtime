@@ -82,8 +82,8 @@ struct BoiledDetails: View {
                     Text("Estimated boiled time")
                         .font(Font.custom("Montserrat-Light", size: 17))
                     HStack(alignment: .firstTextBaseline) {
-                        Text(Date().addingTimeInterval(TimeInterval(vm.estimatedBoiledTime)), style: .timer)
-                        Text("\(vm.estimatedBoiledTime)")
+                        
+                        Text("\(vm.estimatedBoiledTime.timeStyle())")
                             .font(Font.custom("Montserrat-ExtraBold", size: 35))
                         Text("MIN")
                             .font(.footnote)
@@ -121,5 +121,13 @@ struct BoiledDetails_Previews: PreviewProvider {
     static var previews: some View {
         BoiledDetails()
             
+    }
+}
+
+extension Int {
+    func timeStyle() -> String {
+        let minutes = self / 60 % 60
+        let seconds = self % 60
+        return String(format:"%02d:%02d", minutes, seconds)
     }
 }

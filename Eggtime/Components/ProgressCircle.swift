@@ -103,7 +103,7 @@ struct Clock: View {
     func counterToMinutes() -> Text {
         let  currentTime = countTo - counter
          
-        return Text("\(currentTime)")
+        return Text("\(currentTime.timeStyle())")
     }
 }
 
