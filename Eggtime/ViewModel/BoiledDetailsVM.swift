@@ -16,29 +16,29 @@ class BoiledDetailsVM: ObservableObject {
         if temperature == "Fridge temperature" {
             if size == "S" {
                 if hardness == "Soft" {
-                    estimatedBoiledTime = 10
+                    estimatedBoiledTime = 270
                 } else if hardness == "Medium" {
-                    estimatedBoiledTime = 360
+                    estimatedBoiledTime = 390
                 } else {
-                    estimatedBoiledTime = 600
+                    estimatedBoiledTime = 630
                 }
             } else if size == "M" {
                 //TODO: - Adjust these for medium size
                 if hardness == "Soft" {
-                    estimatedBoiledTime = 240
+                    estimatedBoiledTime = 300
                 } else if hardness == "Medium" {
-                    estimatedBoiledTime = 360
+                    estimatedBoiledTime = 420
                 } else {
-                    estimatedBoiledTime = 600
+                    estimatedBoiledTime = 660
                 }
             } else {
                 //TODO: - Adjust these for large size
                 if hardness == "Soft" {
-                    estimatedBoiledTime = 240
+                    estimatedBoiledTime = 330
                 } else if hardness == "Medium" {
-                    estimatedBoiledTime = 360
+                    estimatedBoiledTime = 450
                 } else {
-                    estimatedBoiledTime = 600
+                    estimatedBoiledTime = 690
                 }
             }
         } else {//If temperature is room
@@ -53,20 +53,20 @@ class BoiledDetailsVM: ObservableObject {
             } else if size == "M" {
                 //TODO: - Adjust these for medium size
                 if hardness == "Soft" {
-                    estimatedBoiledTime = 240
+                    estimatedBoiledTime = 270
                 } else if hardness == "Medium" {
-                    estimatedBoiledTime = 360
+                    estimatedBoiledTime = 390
                 } else {
-                    estimatedBoiledTime = 600
+                    estimatedBoiledTime = 630
                 }
             } else {
                 //TODO: - Adjust these for large size
                 if hardness == "Soft" {
-                    estimatedBoiledTime = 240
+                    estimatedBoiledTime = 300
                 } else if hardness == "Medium" {
-                    estimatedBoiledTime = 360
+                    estimatedBoiledTime = 420
                 } else {
-                    estimatedBoiledTime = 600
+                    estimatedBoiledTime = 660
                 }
             }
         }
