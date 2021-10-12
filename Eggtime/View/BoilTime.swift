@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct BoilTime: View {
+    
+    var vm = BoilTimeViewModel()
         
     @State var boiledTime: Int
     @State var boiledType: String
@@ -97,7 +99,7 @@ struct BoilTime: View {
                 Spacer()
                 ThinBoldHeader(thinText: "", boldText: "Boiled Tip", size: 15)
                 Spacer()
-                Text("After cooking, let the eggs rest in an ice-bath to shock them.")
+                Text(vm.getTips())
                     .foregroundColor(.secondary)
                     .multilineTextAlignment(.center)
                 Spacer()

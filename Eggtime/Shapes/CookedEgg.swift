@@ -43,6 +43,7 @@ struct CookedEgg: View {
                             .offset(x: -30, y: -10)
                             .blur(radius: 5)
                             .opacity(boiledType == "hard" ? 0.3 : boiledType == "medium" ? 0.6 : 0.8)
+                            .blendMode(.colorBurn)
                     )
                     .overlay(EggYellow2()
                                 .fill(LinearGradient(
@@ -55,6 +56,7 @@ struct CookedEgg: View {
                                 .offset(x: 20, y:70)
                                 .blur(radius: 5)
                                 .opacity(boiledType == "hard" ? 0.3 : boiledType == "medium" ? 0.6 : 0.8)
+                                .blendMode(.colorBurn)
                     )
             )
     }
@@ -65,7 +67,7 @@ struct CookedEgg_Previews: PreviewProvider {
         ZStack {
             Color.gray
                 .ignoresSafeArea()
-            CookedEgg(boiledType: "soft")
+            CookedEgg(boiledType: "medium")
         }
     }
 }
