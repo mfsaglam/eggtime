@@ -12,12 +12,11 @@ struct ThinBoldHeader: View {
     var boldText: String
     var size: CGFloat
     var body: some View {
-        HStack {
-            Text(thinText)
-                .font(Font.custom("Montserrat-Light", size: size))
-            Text(boldText)
-                .font(Font.custom("Montserrat-ExtraBold", size: size))
-        }
+        Text(thinText)
+            .font(Font.custom("Montserrat-Light", size: size))
+        + Text(boldText)
+            .font(Font.custom("Montserrat-ExtraBold", size: size))
+
     }
 }
 

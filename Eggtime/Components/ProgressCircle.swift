@@ -23,14 +23,14 @@ struct ProgressCircle: View {
     var body: some View {
         ZStack {
             Circle()
-                .stroke(Color.black, style: StrokeStyle(lineWidth: 15, dash: [2.6,22], dashPhase: 20))
+                .stroke(Color.secondary, style: StrokeStyle(lineWidth: 15, dash: [2.6,22], dashPhase: 20))
                 .frame(width: 220, height: 220)
-                .opacity(0.05)
+                .opacity(0.3)
             Circle()
                 .fill(Color.clear)
                 .frame(width: 250, height: 250)
                 .overlay(
-                    Circle().stroke(Color(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)), lineWidth: lineWidth)
+                    Circle().stroke(Color.primary, lineWidth: lineWidth)
                         .opacity(0.1)
                 )
             
@@ -109,6 +109,11 @@ struct Clock: View {
 
 struct ProgressCircle_Previews: PreviewProvider {
     static var previews: some View {
-        ProgressCircle(countTo: .constant(200), counted: 150)
+        Group {
+            ProgressCircle(countTo: .constant(200), counted: 150)
+                .preferredColorScheme(.dark)
+            ProgressCircle(countTo: .constant(200), counted: 150)
+                .preferredColorScheme(.light)
+        }
     }
 }

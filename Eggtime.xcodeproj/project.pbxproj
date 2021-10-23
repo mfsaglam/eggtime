@@ -18,7 +18,6 @@
 		121EE0D826FDFFB30083C675 /* CookedEgg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121EE0D726FDFFB30083C675 /* CookedEgg.swift */; };
 		121EE0DA26FE03E60083C675 /* EggYellow1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121EE0D926FE03E60083C675 /* EggYellow1.swift */; };
 		121EE0DC26FE04190083C675 /* EggYellow2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121EE0DB26FE04190083C675 /* EggYellow2.swift */; };
-		123140C52715B78900496C11 /* BoilTimeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123140C42715B78900496C11 /* BoilTimeViewModel.swift */; };
 		125537BF27046C570047713E /* Montserrat-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 125537BE27046C570047713E /* Montserrat-ExtraBold.ttf */; };
 		125537C127046E610047713E /* Montserrat-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 125537C027046E610047713E /* Montserrat-Light.ttf */; };
 		125537C92704F6230047713E /* ButtonWithEgg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125537C82704F6230047713E /* ButtonWithEgg.swift */; };
@@ -47,7 +46,6 @@
 		121EE0D726FDFFB30083C675 /* CookedEgg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookedEgg.swift; sourceTree = "<group>"; };
 		121EE0D926FE03E60083C675 /* EggYellow1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggYellow1.swift; sourceTree = "<group>"; };
 		121EE0DB26FE04190083C675 /* EggYellow2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggYellow2.swift; sourceTree = "<group>"; };
-		123140C42715B78900496C11 /* BoilTimeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoilTimeViewModel.swift; sourceTree = "<group>"; };
 		125537BE27046C570047713E /* Montserrat-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraBold.ttf"; sourceTree = "<group>"; };
 		125537C027046E610047713E /* Montserrat-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.ttf"; sourceTree = "<group>"; };
 		125537C82704F6230047713E /* ButtonWithEgg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonWithEgg.swift; sourceTree = "<group>"; };
@@ -181,7 +179,6 @@
 			isa = PBXGroup;
 			children = (
 				125537E02708689F0047713E /* BoiledDetailsVM.swift */,
-				123140C42715B78900496C11 /* BoilTimeViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -271,7 +268,6 @@
 				125537C92704F6230047713E /* ButtonWithEgg.swift in Sources */,
 				12EBB2F1270D9B560009579C /* ProgressCircle.swift in Sources */,
 				125537E12708689F0047713E /* BoiledDetailsVM.swift in Sources */,
-				123140C52715B78900496C11 /* BoilTimeViewModel.swift in Sources */,
 				121EE0DC26FE04190083C675 /* EggYellow2.swift in Sources */,
 				121EE0D626FDF9FA0083C675 /* BoiledDetails.swift in Sources */,
 				125537DE270867690047713E /* EggModel.swift in Sources */,

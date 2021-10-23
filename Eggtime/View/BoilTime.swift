@@ -9,10 +9,7 @@ import SwiftUI
 
 struct BoilTime: View {
     
-    var vm = BoilTimeViewModel()
-        
-    @State var boiledTime: Int
-    @State var boiledType: String
+    @EnvironmentObject var vm: BoiledDetailsVM
     
     @Environment(\.presentationMode) var presentationMode
     
@@ -25,7 +22,7 @@ struct BoilTime: View {
                         presentationMode.wrappedValue.dismiss()
                     }
                 Spacer()
-                ThinBoldHeader(thinText: "", boldText: "\(boiledType) boiled eggs", size: 20)
+                ThinBoldHeader(thinText: "", boldText: "\(vm.boiledType) boiled eggs", size: 20)
                     .offset(x: -21.5)
                 Spacer()
             }
@@ -44,13 +41,6 @@ struct BoilTime: View {
                     .opacity(0.05)
                     .padding()
                     .frame(width: 350, height: 350)
-//                Circle()
-//                    .stroke(lineWidth: 7)
-//                    .foregroundColor(.secondary)
-//                    .opacity(0.2)
-//                    .padding()
-//                    .frame(width: 300, height: 300)
-//                    .shadow(radius: 20)
                 Egg()
                     .overlay(
                         EggShape()
@@ -64,7 +54,7 @@ struct BoilTime: View {
                         Circle()
                             .frame(width: 235, height: 235)
                     )
-                ProgressCircle(countTo: $boiledTime)
+                ProgressCircle(countTo: $vm.boiledTime)
                 
             }
             Spacer()
@@ -73,7 +63,7 @@ struct BoilTime: View {
                 Spacer()
                 HStack(alignment: .firstTextBaseline) {
 //                    Text("\(boiledTime)")
-                    Text("\(boiledTime.timeStyle())")
+                    Text("\(vm.boiledTime.timeStyle())")
                         .font(Font.custom("Montserrat-ExtraBold", size: 25))
                     Text("MIN")
                         .font(.footnote)
@@ -117,7 +107,7 @@ struct BoilTime: View {
 
 struct BoilTime_Previews: PreviewProvider {
     static var previews: some View {
-        BoilTime(boiledTime: 20, boiledType: "Soft")
+        BoilTime()
         
     }
 }

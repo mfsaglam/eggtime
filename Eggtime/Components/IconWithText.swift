@@ -15,8 +15,8 @@ struct IconWithText: View {
             Image(systemName: image)
                 .font(.title)
                 .frame(width: 45, height: 45)
-                .background(Color(#colorLiteral(red: 0.9013573527, green: 0.5734035373, blue: 0.4102450013, alpha: 1)).opacity(0.3))
-                .foregroundColor(Color(#colorLiteral(red: 0.9013573527, green: 0.5734035373, blue: 0.4102450013, alpha: 1)))
+                .background(Color(#colorLiteral(red: 0.9019607843, green: 0.5725490196, blue: 0.4117647059, alpha: 1)).opacity(0.3))
+                .foregroundColor(Color("IconAccentColor"))
                 .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
             ThinBoldHeader(thinText: text, boldText: "", size: 20)
                 .foregroundColor(.secondary)
@@ -27,6 +27,10 @@ struct IconWithText: View {
 
 struct IconWithText_Previews: PreviewProvider {
     static var previews: some View {
-        IconWithText(image: "chevron.right", text: "Test")
+        Group {
+            IconWithText(image: "chevron.right", text: "Test")
+            IconWithText(image: "chevron.right", text: "Test")
+                .preferredColorScheme(.dark)
+        }
     }
 }
