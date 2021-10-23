@@ -22,7 +22,7 @@ struct BoilTime: View {
                         presentationMode.wrappedValue.dismiss()
                     }
                 Spacer()
-                ThinBoldHeader(thinText: "", boldText: "\(vm.boiledType) boiled eggs", size: 20)
+                ThinBoldHeader(thinText: "", boldText: "\(vm.hardness) boiled eggs", size: 20)
                     .offset(x: -21.5)
                 Spacer()
             }
@@ -89,9 +89,11 @@ struct BoilTime: View {
                 Spacer()
                 ThinBoldHeader(thinText: "", boldText: "Boiled Tip", size: 15)
                 Spacer()
-                Text(vm.getTips())
-                    .foregroundColor(.secondary)
-                    .multilineTextAlignment(.center)
+                ScrollView(showsIndicators: false) {
+                    Text(vm.getTips())
+                        .foregroundColor(.secondary)
+                        .multilineTextAlignment(.center)
+                }
                 Spacer()
                 ActionButton(text: "STOP") {
                     presentationMode.wrappedValue.dismiss()
@@ -108,6 +110,7 @@ struct BoilTime: View {
 struct BoilTime_Previews: PreviewProvider {
     static var previews: some View {
         BoilTime()
+            .environmentObject(BoiledDetailsVM())
         
     }
 }

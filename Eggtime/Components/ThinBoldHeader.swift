@@ -12,7 +12,7 @@ struct ThinBoldHeader: View {
     var boldText: String
     var size: CGFloat
     var body: some View {
-        Text(thinText)
+        Text("\(thinText) ")
             .font(Font.custom("Montserrat-Light", size: size))
         + Text(boldText)
             .font(Font.custom("Montserrat-ExtraBold", size: size))

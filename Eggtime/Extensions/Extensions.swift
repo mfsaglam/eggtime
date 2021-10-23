@@ -17,3 +17,11 @@ extension Int {
         }
     }
 }
+
+extension Int {
+    func timeStyle() -> String {
+        let minutes = self / 60 % 60
+        let seconds = self % 60
+        return String(format:"%02d:%02d", minutes, seconds)
+    }
+}
