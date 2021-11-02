@@ -8,12 +8,13 @@
 import SwiftUI
 
 struct ProgressCircle: View {
-    
-    let timer = Timer.publish(every: 1.0, on: .main, in: .common).autoconnect()
-    
+        
     @State var isActive = true
-    @Binding var countTo: Int
     @State var counted: Int = 0
+    @State var timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    
+    @Binding var countTo: Int
+
     var lineWidth: CGFloat = 15
     
     var progress: CGFloat {
@@ -52,8 +53,7 @@ struct ProgressCircle: View {
                                                     .init(color: Color(#colorLiteral(red: 0.8705882430076599, green: 0.6627451777458191, blue: 0.529411792755127, alpha: 0.10000000149011612)), location: 0),
                                                     .init(color: Color(#colorLiteral(red: 0.8705882430076599, green: 0.6627451181411743, blue: 0.529411792755127, alpha: 1)), location: 0.6),
                                                     .init(color: Color(#colorLiteral(red: 0.8705882430076599, green: 0.6627451777458191, blue: 0.529411792755127, alpha: 0.10000000149011612)), location: 0.99)]),
-                                center: UnitPoint(x: 0.5, y: 0.5)
-                            )
+                                center: UnitPoint(x: 0.5, y: 0.5))
                             )
                         ).animation(
                             .easeInOut(duration: 0.2)
@@ -61,12 +61,10 @@ struct ProgressCircle: View {
                 )
                 .rotationEffect(Angle(degrees: -90))
             
-            
-            
             Clock(counter: counted, countTo: countTo)
                 .offset(y: -40)
         }
-        .onReceive(timer) { time in
+        .onReceive(timer) { _ in
             guard self.isActive else { return }
             
             if countTo - counted != 0 {
@@ -110,9 +108,9 @@ struct Clock: View {
 struct ProgressCircle_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            ProgressCircle(countTo: .constant(200), counted: 150)
+            ProgressCircle(counted: 150, countTo: .constant(200))
                 .preferredColorScheme(.dark)
-            ProgressCircle(countTo: .constant(200), counted: 150)
+            ProgressCircle(counted: 150, countTo: .constant(200))
                 .preferredColorScheme(.light)
         }
     }

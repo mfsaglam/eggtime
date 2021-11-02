@@ -54,7 +54,7 @@ struct BoilTime: View {
                         Circle()
                             .frame(width: 235, height: 235)
                     )
-                ProgressCircle(countTo: $vm.boiledTime)
+                ProgressCircle(countTo: $vm.estimatedBoiledTime)
                 
             }
             Spacer()
@@ -63,7 +63,7 @@ struct BoilTime: View {
                 Spacer()
                 HStack(alignment: .firstTextBaseline) {
 //                    Text("\(boiledTime)")
-                    Text("\(vm.boiledTime.timeStyle())")
+                    Text("\(vm.estimatedBoiledTime.timeStyle())")
                         .font(Font.custom("Montserrat-ExtraBold", size: 25))
                     Text("MIN")
                         .font(.footnote)
@@ -103,6 +103,9 @@ struct BoilTime: View {
         .padding()
         .navigationBarHidden(true)
         .navigationBarBackButtonHidden(true)
+        .onAppear {
+            print(vm.estimatedBoiledTime)
+        }
     }
 }
 

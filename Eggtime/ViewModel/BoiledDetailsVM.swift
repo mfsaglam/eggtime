@@ -14,8 +14,9 @@ class BoiledDetailsVM: ObservableObject {
     @AppStorage(wrappedValue: "Soft", "boiledType") var hardness
     
     @Published var estimatedBoiledTime: Int = 0
-    @Published var boiledTime: Int = 0
+//    @Published var boiledTime: Int = 0
     @Published var startCooking = false
+    
     
     let temperatures = ["Room temperature", "Fridge Temperature"]
     let eggSizes = ["S","M","L"]
