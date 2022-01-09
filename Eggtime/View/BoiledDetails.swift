@@ -33,6 +33,7 @@ struct BoiledDetails: View {
                     .frame(width: 90, height: 210)
                     .offset(x: 40)
             }
+            .padding(.horizontal)
             VStack(spacing: 25) {
                 HStack {
                     ThinBoldHeader(thinText: "Egg", boldText: "temperature", size: 20)
@@ -44,8 +45,9 @@ struct BoiledDetails: View {
                     }
                 }
             }
+            .padding(.horizontal)
         }
-        
+    
         VStack(spacing: 25) {
             HStack {
                 ThinBoldHeader(thinText: "Egg", boldText: "size", size: 20)
@@ -59,6 +61,7 @@ struct BoiledDetails: View {
                 }
             }
         }
+        .padding(.horizontal)
         
         VStack(spacing: 50) {
             HStack {
@@ -73,6 +76,7 @@ struct BoiledDetails: View {
                 }
             }
         }
+        .padding(.horizontal)
         
         Spacer()
         

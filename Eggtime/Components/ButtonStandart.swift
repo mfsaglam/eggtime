@@ -39,7 +39,6 @@ struct ButtonStandart: View {
         .onTapGesture {
             withAnimation(.spring()) {
                 selection = text
-                print("selection is \(selection) and text is \(text)")
             }
         }
     }
