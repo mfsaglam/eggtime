@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		120EBC552709C2B200BD3987 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120EBC542709C2B200BD3987 /* Extensions.swift */; };
+		120EBC552709C2B200BD3987 /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120EBC542709C2B200BD3987 /* Int+Extension.swift */; };
 		121EE0C326FDEB220083C675 /* EggtimeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121EE0C226FDEB220083C675 /* EggtimeApp.swift */; };
 		121EE0C526FDEB220083C675 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121EE0C426FDEB220083C675 /* ContentView.swift */; };
 		121EE0C726FDEB230083C675 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 121EE0C626FDEB230083C675 /* Assets.xcassets */; };
@@ -34,7 +34,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		120EBC542709C2B200BD3987 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		120EBC542709C2B200BD3987 /* Int+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
 		121EE0BF26FDEB220083C675 /* Eggtime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eggtime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		121EE0C226FDEB220083C675 /* EggtimeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggtimeApp.swift; sourceTree = "<group>"; };
 		121EE0C426FDEB220083C675 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -76,7 +76,7 @@
 		120EBC562709C2BA00BD3987 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				120EBC542709C2B200BD3987 /* Extensions.swift */,
+				120EBC542709C2B200BD3987 /* Int+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -267,7 +267,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				121EE0D226FDEFEB0083C675 /* EggShape.swift in Sources */,
-				120EBC552709C2B200BD3987 /* Extensions.swift in Sources */,
+				120EBC552709C2B200BD3987 /* Int+Extension.swift in Sources */,
 				121EE0C526FDEB220083C675 /* ContentView.swift in Sources */,
 				125537D22705D6E50047713E /* ActionButton.swift in Sources */,
 				125537D42707243C0047713E /* IconWithText.swift in Sources */,

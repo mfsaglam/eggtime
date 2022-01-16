@@ -103,9 +103,6 @@ struct BoilTime: View {
         .padding()
         .navigationBarHidden(true)
         .navigationBarBackButtonHidden(true)
-        .onAppear {
-            print(vm.estimatedBoiledTime)
-        }
     }
 }
 
